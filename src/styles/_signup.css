@@ -112,8 +112,11 @@
   opacity: .7;
 }
 .field__input:focus,
-.select__native:focus {
-  outline: none;
+.select__native:focus { border-bottom-color: var(--color-blue-500); }
+.field__input:focus-visible,
+.select__native:focus-visible {
+  outline: 3px solid var(--color-blue-300);
+  outline-offset: 4px;
   border-bottom-color: var(--color-blue-500);
 }
 

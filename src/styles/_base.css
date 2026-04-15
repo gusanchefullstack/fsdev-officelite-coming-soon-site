@@ -5,8 +5,16 @@ body {
   font-size: var(--fs-body);
   font-weight: var(--fw-regular);
   line-height: var(--lh-body);
-  color: var(--color-neutral-500);
+  /* neutral-800 on neutral-50 passes WCAG AA for small text (#333950 / #fafafa ≈ 10.6:1) */
+  color: var(--color-neutral-800);
   background: var(--color-neutral-50);
+}
+
+/* Accessible focus — applies when a user is navigating by keyboard */
+:focus-visible {
+  outline: 3px solid var(--color-blue-300);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
 .container {

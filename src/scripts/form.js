@@ -1,4 +1,13 @@
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+function isValidEmail(input) {
+  // Prefer the browser's built-in type="email" constraint (HTML Living Standard).
+  // Fallback to a conservative RFC5322-lite regex only if the element does not
+  // support constraint validation.
+  if (input && typeof input.checkValidity === 'function' && input.type === 'email') {
+    return input.value.trim() !== '' && input.checkValidity();
+  }
+  const v = (input?.value ?? '').trim();
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+}
 
 function setError(field, message) {
   if (!field) return;
@@ -34,7 +43,7 @@ export function initForm() {
     if (emailInput) {
       const v = emailInput.value.trim();
       if (!v) { setError(emailField, 'Email Address cannot be empty'); valid = false; }
-      else if (!EMAIL_RE.test(v)) { setError(emailField, 'Please use a valid email address'); valid = false; }
+      else if (!isValidEmail(emailInput)) { setError(emailField, 'Please use a valid email address'); valid = false; }
       else clearError(emailField);
     }
 

@@ -1,14 +1,24 @@
-// 30-day countdown — target persisted per-visitor in localStorage
+// 30-day countdown — target persisted per-visitor in localStorage when available
 const KEY = 'officelite:launch';
+let memoryTarget = null; // in-memory fallback when storage is unavailable
+
+function safeGet() {
+  try { return localStorage.getItem(KEY); } catch { return null; }
+}
+function safeSet(v) {
+  try { localStorage.setItem(KEY, v); } catch { /* ignore quota / privacy errors */ }
+}
 
 function getTarget() {
-  const stored = localStorage.getItem(KEY);
+  const stored = safeGet();
   if (stored) {
     const t = parseInt(stored, 10);
     if (!Number.isNaN(t) && t > Date.now()) return t;
   }
+  if (memoryTarget && memoryTarget > Date.now()) return memoryTarget;
   const t = Date.now() + 30 * 24 * 60 * 60 * 1000;
-  localStorage.setItem(KEY, String(t));
+  memoryTarget = t;
+  safeSet(String(t));
   return t;
 }
 
