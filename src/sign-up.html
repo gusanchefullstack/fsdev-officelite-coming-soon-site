@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <title>Frontend Mentor | Officelite — Sign up</title>
+</head>
+<body class="signup">
+  <div class="signup__side-bg" aria-hidden="true"></div>
+
+  <header class="signup__header">
+    <div class="container">
+      <a href="/" class="logo" aria-label="Officelite home">
+        <img src="/shared/logo.svg" alt="Officelite" />
+      </a>
+    </div>
+  </header>
+
+  <main class="signup__main">
+    <div class="container signup__grid">
+      <div>
+        <section class="signup__intro" aria-labelledby="signup-title">
+          <h1 id="signup-title" class="signup__title">Work smarter. Save time.</h1>
+          <p class="signup__lead">
+            Easily manage your projects. Get on the list and receive in-app perks available only to
+            early subscribers. We are moving into final development and getting ready for official launch soon.
+          </p>
+        </section>
+
+        <section class="signup__countdown-block" aria-labelledby="countdown-title">
+          <p id="countdown-title" class="countdown__lead signup__countdown-lead">
+            Coming <span data-launch-date>4 Nov 2020</span>
+          </p>
+          <ul class="countdown countdown--light" aria-label="Countdown to launch">
+            <li class="countdown__cell"><span class="countdown__num" data-countdown="days">47</span><span class="countdown__label">days</span></li>
+            <li class="countdown__cell"><span class="countdown__num" data-countdown="hours">07</span><span class="countdown__label">hours</span></li>
+            <li class="countdown__cell"><span class="countdown__num" data-countdown="min">56</span><span class="countdown__label">min</span></li>
+            <li class="countdown__cell"><span class="countdown__num" data-countdown="sec">14</span><span class="countdown__label">sec</span></li>
+          </ul>
+        </section>
+      </div>
+
+      <form class="form-card" data-signup-form novalidate aria-label="Sign up for early access">
+        <div class="field">
+          <label class="sr-only" for="name">Name</label>
+          <input class="field__input" id="name" name="name" type="text" placeholder="Name" />
+          <img class="field__icon-error" src="/sign-up/icon-cross.svg" alt="" aria-hidden="true" />
+          <p class="field__error" role="alert"></p>
+        </div>
+
+        <div class="field">
+          <label class="sr-only" for="email">Email Address</label>
+          <input class="field__input" id="email" name="email" type="email" placeholder="Email Address" />
+          <img class="field__icon-error" src="/sign-up/icon-cross.svg" alt="" aria-hidden="true" />
+          <p class="field__error" role="alert"></p>
+        </div>
+
+        <div class="field select">
+          <label class="sr-only" for="plan">Plan</label>
+          <select class="select__native" id="plan" name="plan" aria-label="Choose a plan">
+            <option value="basic">Basic Pack Free</option>
+            <option value="pro">Pro Pack $9.99</option>
+            <option value="ultimate">Ultimate Pack $19.99</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label class="sr-only" for="phone">Phone Number</label>
+          <input class="field__input" id="phone" name="phone" type="tel" placeholder="Phone Number" />
+        </div>
+
+        <div class="field">
+          <label class="sr-only" for="company">Company</label>
+          <input class="field__input" id="company" name="company" type="text" placeholder="Company" />
+        </div>
+
+        <button type="submit" class="btn btn--primary signup__submit">Get on the list</button>
+        <p data-success hidden role="status">Thanks! You're on the list.</p>
+      </form>
+    </div>
+  </main>
+
+  <script type="module" src="/scripts/main.js"></script>
+</body>
+</html>

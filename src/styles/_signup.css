@@ -1,0 +1,155 @@
+.signup {
+  position: relative;
+  min-height: 100vh;
+  background: var(--color-neutral-50);
+  color: var(--color-neutral-800);
+  overflow-x: clip;
+  isolation: isolate;
+}
+.signup__side-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 420px;
+  height: 100%;
+  background: var(--color-neutral-900);
+  z-index: -1;
+  pointer-events: none;
+}
+.signup__side-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/sign-up/bg-pattern-side.svg") no-repeat right top;
+  opacity: .7;
+}
+@media (max-width: 900px) { .signup__side-bg { display: none; } }
+
+.signup__header {
+  padding-block: var(--space-1000) 0;
+  display: flex;
+}
+.signup__header .container { display: flex; }
+
+.signup__main {
+  padding-block: var(--space-1800) var(--space-1000);
+}
+.signup__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-1000);
+  align-items: start;
+}
+@media (min-width: 900px) {
+  .signup__grid { grid-template-columns: 1fr 445px; gap: var(--space-400); }
+}
+
+.signup__intro { display: flex; flex-direction: column; gap: var(--space-300); max-width: 540px; }
+.signup__title {
+  font-size: clamp(2rem, 5vw, var(--fs-display));
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  color: var(--color-neutral-800);
+}
+.signup__lead {
+  font-size: var(--fs-lead);
+  line-height: var(--lh-lead);
+  color: var(--color-neutral-500);
+}
+.signup__countdown-block { margin-top: var(--space-500); max-width: 448px; }
+.signup__countdown-lead { color: var(--color-neutral-800); }
+
+/* Countdown variant on sign-up */
+.countdown--light .countdown__cell {
+  background: var(--color-blue-100);
+  color: var(--color-blue-500);
+}
+.countdown--light .countdown__label {
+  color: var(--color-neutral-800);
+  opacity: .5;
+}
+
+/* Form card — underline inputs per Figma */
+.form-card {
+  background: var(--color-white);
+  color: var(--color-neutral-800);
+  width: 100%;
+  padding: var(--space-500);
+  border-radius: var(--radius-12);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-300);
+  justify-self: center;
+  max-width: 445px;
+}
+
+.field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-100);
+}
+.field__input,
+.select__native {
+  width: 100%;
+  padding: 0 var(--space-200) var(--space-200);
+  border: 0;
+  border-bottom: 1px solid rgba(116, 123, 149, 0.5);
+  background: transparent;
+  color: var(--color-neutral-800);
+  font-size: var(--fs-body);
+  line-height: 1.75;
+  border-radius: 0;
+  font-weight: var(--fw-bold);
+}
+.field__input::placeholder {
+  color: var(--color-neutral-500);
+  font-weight: var(--fw-regular);
+  opacity: .7;
+}
+.field__input:focus,
+.select__native:focus {
+  outline: none;
+  border-bottom-color: var(--color-blue-500);
+}
+
+.field--error .field__input { border-bottom-color: #ff4f4f; padding-right: 2rem; }
+.field__error {
+  display: none;
+  color: #ff4f4f;
+  font-size: 0.75rem;
+  font-weight: var(--fw-bold);
+  padding-inline: var(--space-200);
+}
+.field--error .field__error { display: block; }
+.field__icon-error {
+  position: absolute;
+  right: var(--space-200);
+  top: .25rem;
+  width: 16px; height: 16px;
+  display: none;
+}
+.field--error .field__icon-error { display: block; }
+
+/* Custom select */
+.select { position: relative; }
+.select__native {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent url("/sign-up/icon-arrow-down.svg") no-repeat right var(--space-200) center;
+  background-size: 11px 6px;
+  padding-right: var(--space-500);
+  font-weight: var(--fw-bold);
+  color: var(--color-neutral-800);
+  cursor: pointer;
+}
+.select__native option { color: var(--color-neutral-800); }
+
+.signup__submit { margin-top: var(--space-200); width: 100%; }
+
+[data-success] {
+  color: var(--color-neutral-800);
+  text-align: center;
+  font-weight: var(--fw-bold);
+}
