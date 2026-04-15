@@ -1,0 +1,74 @@
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-150) var(--space-500);
+  border-radius: var(--radius-full);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  transition: opacity .2s, background-color .2s, color .2s, transform .15s;
+  white-space: nowrap;
+}
+.btn:hover { opacity: .75; }
+.btn:active { transform: translateY(1px); }
+
+.btn--primary {
+  background: var(--color-blue-500);
+  color: var(--color-white);
+  box-shadow: var(--shadow-button);
+}
+.btn--primary:hover { background: #7a97ff; opacity: 1; }
+
+.btn--soft {
+  background: var(--color-blue-100);
+  color: var(--color-blue-500);
+}
+.btn--soft:hover { background: var(--color-blue-500); color: var(--color-white); opacity: 1; }
+
+.btn--on-blue {
+  background: var(--color-white);
+  color: var(--color-blue-500);
+}
+.btn--on-blue:hover { background: var(--color-neutral-900); color: var(--color-white); opacity: 1; }
+
+/* ---------- Countdown ---------- */
+.countdown {
+  display: flex;
+  gap: var(--space-200);
+}
+.countdown__cell {
+  flex: 1;
+  background: var(--color-neutral-800);
+  border-radius: var(--radius-12);
+  padding: var(--space-200) var(--space-150);
+  text-align: center;
+  color: var(--color-white);
+  min-width: 0;
+}
+.countdown__num {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-display);
+  line-height: var(--lh-tight);
+  font-variant-numeric: tabular-nums;
+}
+.countdown__label {
+  font-size: var(--fs-body);
+  opacity: .5;
+}
+.countdown__lead {
+  color: var(--color-white);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-caps);
+  text-transform: uppercase;
+  font-size: var(--fs-body);
+  margin-bottom: var(--space-150);
+}
+.countdown__lead span { color: var(--color-blue-500); }
+
+@media (max-width: 600px) {
+  .countdown__cell { padding: var(--space-150) var(--space-100); }
+  .countdown__num { font-size: 2rem; }
+  .countdown__label { font-size: .75rem; }
+}
