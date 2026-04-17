@@ -109,12 +109,12 @@
 /* Countdown row */
 .countdown-row {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--space-500);
   align-items: center;
 }
 @media (min-width: 900px) {
-  .countdown-row { grid-template-columns: 1fr auto; }
+  .countdown-row { grid-template-columns: minmax(0, 1fr) auto; }
 }
 .countdown-row__cta { justify-self: start; }
 @media (min-width: 900px) { .countdown-row__cta { justify-self: end; } }

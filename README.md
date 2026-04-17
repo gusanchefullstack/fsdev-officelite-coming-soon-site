@@ -48,16 +48,16 @@ Users should be able to:
 ## Screenshots
 
 #### Home — Desktop (1440px)
-![Home desktop](./screenshots/home-desktop-1440.png)
+<img src="./screenshots/home-desktop-1440.png" alt="Home desktop" width="720">
 
 #### Home — Mobile (375px)
-![Home mobile](./screenshots/home-mobile-375.png)
+<img src="./screenshots/home-mobile-375.png" alt="Home mobile" width="280">
 
 #### Sign-up — Desktop (1440px)
-![Sign-up desktop](./screenshots/signup-desktop-1440.png)
+<img src="./screenshots/signup-desktop-1440.png" alt="Sign-up desktop" width="720">
 
 #### Sign-up — Mobile (375px)
-![Sign-up mobile](./screenshots/signup-mobile-375.png)
+<img src="./screenshots/signup-mobile-375.png" alt="Sign-up mobile" width="280">
 
 ## Built With
 
